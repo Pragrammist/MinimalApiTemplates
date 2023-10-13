@@ -1,4 +1,6 @@
+using Infrastrucutre.Middlewares;
 
+namespace Infrastrucutre.StartConfiguration;
 
 public static class WebApplicationExtensions{
     public static WebApplication InitMiddlewares(this WebApplication app)

@@ -1,7 +1,11 @@
+using Infrastrucutre.MappingConfiguration;
+
+namespace Infrastrucutre.StartConfiguration;
 
 public static class DefaultServicesConfigurationExtensions{
     public static IServiceCollection InitServices(this IServiceCollection services)
     {   
+        InitMappster();
         //services.AddControllers();
         services.AddSwaggerServices();
         services.AddCors();
@@ -17,5 +21,9 @@ public static class DefaultServicesConfigurationExtensions{
         });
         services.AddSwaggerGen();
         return services;
+    }
+    public static void InitMappster()
+    {
+        MapsterConfiguration.SetMapping();
     }
 }

@@ -1,3 +1,5 @@
+namespace Infrastrucutre.Middlewares;
+
 public class AppExceptionHandlerMiddleware
 {
     private readonly RequestDelegate next;
