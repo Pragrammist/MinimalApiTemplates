@@ -1,3 +1,5 @@
+using Infrastrucutre.StartConfiguration;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.InitServices();
 var app = builder.Build();
