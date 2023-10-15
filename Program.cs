@@ -1,7 +1,5 @@
-
 using EFCore;
 using Infrastrucutre.StartConfiguration;
-using Microsoft.AspNetCore.Mvc;
 
 
 var builder = WebApplication.CreateBuilder(args);

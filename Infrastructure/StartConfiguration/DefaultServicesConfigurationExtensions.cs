@@ -42,4 +42,5 @@ public static class DefaultServicesConfigurationExtensions{
         services.AddTransient<IRepository<int>, RepositoryIntIdImpl>();
         return services;
     }
+    
 }
