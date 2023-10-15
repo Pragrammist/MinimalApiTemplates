@@ -3,7 +3,7 @@
     "author": "Vitalick Kovalenko",
     "classifications": [ "Common", "Web", "MinimalApi", "nodb" ],
     "identity": "VitalickKovalenko.MinimalApi.Nodb",
-    "sourceName": "minimal-api-templates",
+    "sourceName": "MinimalApiTemplate",
     "name": "VitalickKovalenko MinimalApi Nodb Application",
     "shortName": "min-api-nodb",
     "tags": {
@@ -19,7 +19,8 @@
                 ".template.config/**/*",
                 "**/*.filelist",
                 "**/*.user",
-                "**/*.lock.json"
+                "**/*.lock.json",
+                "**/.git/**"
             ]
         }
     ]
