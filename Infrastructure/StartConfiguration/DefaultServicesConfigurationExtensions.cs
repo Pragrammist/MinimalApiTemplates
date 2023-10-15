@@ -2,6 +2,8 @@ using EFCore;
 using Infrastrucutre.MappingConfiguration;
 using Microsoft.EntityFrameworkCore;
 
+
+
 namespace Infrastrucutre.StartConfiguration;
 
 public static class DefaultServicesConfigurationExtensions{
