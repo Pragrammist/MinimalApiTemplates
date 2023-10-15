@@ -19,4 +19,4 @@ COPY --from=build /app ./
 EXPOSE 80
 
 # !!!!!! PAS DLL !!!!!!!
-ENTRYPOINT ["dotnet", "minimal-api-templates.dll"]
+ENTRYPOINT ["dotnet", "MinimalApiMongoTemplate.dll"]
