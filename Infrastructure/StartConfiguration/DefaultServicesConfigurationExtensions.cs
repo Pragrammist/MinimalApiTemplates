@@ -1,5 +1,7 @@
 using Infrastrucutre.MappingConfiguration;
 
+
+
 namespace Infrastrucutre.StartConfiguration;
 
 public static class DefaultServicesConfigurationExtensions{
