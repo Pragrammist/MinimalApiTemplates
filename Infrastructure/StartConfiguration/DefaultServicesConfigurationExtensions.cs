@@ -1,4 +1,5 @@
 using Infrastrucutre.MappingConfiguration;
+using MongoDB.Driver;
 
 
 
@@ -11,6 +12,7 @@ public static class DefaultServicesConfigurationExtensions{
         //services.AddControllers();
         services.AddSwaggerServices();
         services.AddCors();
+        services.AddMongoDb();
         return services;
     }
 
@@ -28,5 +30,44 @@ public static class DefaultServicesConfigurationExtensions{
     {
         MapsterConfiguration.SetMapping();
     }
-    
+    public static IServiceCollection AddMongoDb(this IServiceCollection services)
+    {
+        var service = services.BuildServiceProvider().GetRequiredService<IConfiguration>() 
+            ?? throw new AppConfigurationException("Config service is null");
+
+        var connection = service["MONGO"] ?? "mongodb://localhost:27017";
+
+        if(string.IsNullOrEmpty(connection))
+            throw new AppConfigurationException("connection conf is empty");
+
+        var dbName = service["DB_NAME"] ?? "mymongodb";
+
+        if(string.IsNullOrEmpty(dbName))
+            throw new AppConfigurationException("dbName conf is empty");
+
+        services.AddSingleton<IMongoClient>(p =>
+        {
+            var mongoClient = new MongoClient(connection);
+            return mongoClient;
+        });
+        services.AddSingleton(p =>
+        {
+            var mongo = p.GetRequiredService<IMongoClient>();
+            var db = mongo.GetDatabase(dbName);
+            MongoDbBuilder.Build();
+            return db;
+        });
+        
+        
+        
+        //example how add new collection with repository
+        //collection per repository
+        services.AddSingleton<IMongoCollection<EntityBase>>(p =>
+        {
+            var db = p.GetRequiredService<IMongoDatabase>();
+            return db.GetCollection<EntityBase>(nameof(EntityBase) + "_collention");
+        });
+        services.AddTransient<IRepository<EntityBase>, Repository<EntityBase>>();
+        return services;
+    }
 }
