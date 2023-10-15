@@ -1,6 +1,8 @@
 using Infrastrucutre.MappingConfiguration;
 using MongoDB.Driver;
 
+
+
 namespace Infrastrucutre.StartConfiguration;
 
 public static class DefaultServicesConfigurationExtensions{

@@ -1,6 +1,7 @@
 using Infrastrucutre.StartConfiguration;
 using Microsoft.AspNetCore.Mvc;
 
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.InitServices();
 var app = builder.Build();
@@ -15,6 +16,7 @@ app.MapGet("/hello", () => "Hello World");
 app.MapGet("/notfound", handler: () => {
     throw new BadRequestAppException("some went wrong");
 });
+
 
 app.MapPost("/create", async (IRepository<EntityBase> c) => {
     var res = await c.Insert(new EntityBase {});
