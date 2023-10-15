@@ -1,11 +1,11 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Vitalick Kovalenko",
-    "classifications": [ "Common", "Web", "MinimalApi", "nodb" ],
-    "identity": "VitalickKovalenko.MinimalApi.Nodb",
+    "classifications": [ "Common", "Web", "MinimalApi", "Mongo" ],
+    "identity": "VitalickKovalenko.MinimalApi.Mongo",
     "sourceName": "minimal-api-templates",
-    "name": "VitalickKovalenko MinimalApi Nodb Application",
-    "shortName": "min-api-nodb",
+    "name": "VitalickKovalenko MinimalApi Mongo Application",
+    "shortName": "min-api-mongo",
     "tags": {
         "language": "C#",
         "type": "project"
