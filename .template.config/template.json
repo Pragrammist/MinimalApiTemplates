@@ -3,7 +3,7 @@
     "author": "Vitalick Kovalenko",
     "classifications": [ "Common", "Web", "MinimalApi", "Mongo" ],
     "identity": "VitalickKovalenko.MinimalApi.Mongo",
-    "sourceName": "MinimalApiMongoTemplate",
+    "sourceName": "MinimalApiTemplate",
     "name": "VitalickKovalenko MinimalApi Mongo Application",
     "shortName": "min-api-mongo",
     "tags": {
