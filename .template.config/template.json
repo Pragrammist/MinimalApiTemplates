@@ -3,7 +3,7 @@
     "author": "Vitalick Kovalenko",
     "classifications": [ "Common", "Web", "MinimalApi", "Postgre" ],
     "identity": "VitalickKovalenko.MinimalApi.Postgre",
-    "sourceName": "minimal-api-templates",
+    "sourceName": "MinimalApiTemplate",
     "name": "VitalickKovalenko MinimalApi Postgre Application",
     "shortName": "min-api-postgre",
     "tags": {
@@ -19,7 +19,8 @@
                 ".template.config/**/*",
                 "**/*.filelist",
                 "**/*.user",
-                "**/*.lock.json"
+                "**/*.lock.json",
+                "**/.git/**"
             ]
         }
     ]
