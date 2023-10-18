@@ -1,0 +1,25 @@
+stages:
+  - build
+
+
+build-docker-image:
+  stage: build
+
+  tags:
+    - dotnet
+    - shared
+    - linux
+
+  image: docker:latest
+
+  # services:
+  #   - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+
+  before_script:
+    - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+
+  script:
+    - docker build -t $CI_DOCKER_IMAGE_NAME:latest -t $CI_DOCKER_IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $CI_DOCKER_IMAGE_NAME .
+    - docker push $CI_DOCKER_IMAGE_NAME --all-tags
